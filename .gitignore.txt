@@ -1,0 +1,11 @@
+*.rpyc
+*.rpymc
+/game/cache
+/saves
+
+# Distribution builds
+*-dists/
+
+# Common system files
+.DS_Store
+Thumbs.db
