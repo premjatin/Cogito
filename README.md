@@ -21,14 +21,22 @@ This project is an advanced interactive storytelling engine built with the Ren'P
 The engine's main loop is a cycle of AI-driven decision-making:
 
 1.  **Player Input**: The player enters an action or dialogue.
-2.  **Speaker Determination**: An LLM decides if the input is for the **Narrator** (an action, observation) or a **Character** (dialogue).
+   ![game1](https://github.com/user-attachments/assets/da137431-f7c2-4fca-8fd9-3fa80f221d44)
+
+3.  **Speaker Determination**: An LLM decides if the input is for the **Narrator** (an action, observation) or a **Character** (dialogue).
     -   If for a **Character**, a second LLM call identifies the specific character being addressed.
-3.  **Response Generation**:
+      ![emma](https://github.com/user-attachments/assets/b1e296fb-fede-4ab7-a638-cf7dec1ddf17)
+
+4.  **Response Generation**:
     -   **Narrator Bot**: If the input was an action, the Narrator Bot generates a description of the outcome, potentially mentioning characters present in the scene. A `BackgroundDetector` then analyzes this text to set the scene's visual background.
+      ![cafe](https://github.com/user-attachments/assets/deb7a439-5a9e-4b5d-81ae-6e500fc550be)
+
     -   **Character Bot**: If the input was for a character, an `EmotionDeterminationBot` first calculates the character's emotional response. Then, the `CharacterBot` uses this emotion, along with the character's personality and memories, to generate a unique line of dialogue.
-4.  **Display Output**: The game displays the generated text, character sprites (with the correct emotion), and background on the screen.
-5.  **Database Logging**: The entire interaction (player input and AI response) is saved as an "event" in the MongoDB database for future context.
-6.  The loop repeats.
+5.  **Display Output**: The game displays the generated text, character sprites (with the correct emotion), and background on the screen.
+   ![emma sad](https://github.com/user-attachments/assets/5e87e49c-05b0-4977-aeb7-b613a413f72d)
+
+7.  **Database Logging**: The entire interaction (player input and AI response) is saved as an "event" in the MongoDB database for future context.
+8.  The loop repeats.
 
 ## Setup and Installation
 
